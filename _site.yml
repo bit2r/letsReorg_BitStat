@@ -1,0 +1,21 @@
+name: "workshop_lecture"
+title: "Rhino 프레임워크로 BitStat 애플리케이션 개발하기"
+description: |
+   shiny 애플리케이션 개발 프레임워크인 Rhino로 BitStat를 개발하는 방법을 공유합니다.
+output_dir: "docs"
+navbar:
+  right:
+    - text: "BitStat 프로젝트 개요"
+      href: index.html
+    - text: "시작하기"
+      menu:
+        - text: "BitStat 프로젝트 생성하기"
+          href: create_BitStat.html
+        - text: "---"
+        - text: "BitStat 프로젝트 생성하기"
+          href: create_BitStat.html
+output:
+  distill::distill_article:
+    theme: theme.css
+    includes:
+      after_body: footer.html

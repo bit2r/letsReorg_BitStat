@@ -1,0 +1,33 @@
+{
+  "articles": [
+    {
+      "path": "create_BitStat.html",
+      "title": "BitStat 프로젝트 생성하기",
+      "description": "Rhino 패키지로 BitStat 프로젝트를 생성하고 프로젝트의 구조를 살펴봅니다.\n",
+      "author": [
+        {
+          "name": "유충현",
+          "url": "https://choonghyunryu.github.io"
+        }
+      ],
+      "date": "2022-06-11",
+      "contents": "\n\nContents\nBitStat 애플리케이션 구조\n설계\nBitStat 패키지 생성\n프로젝트 구조\n\n\n\n\n\n\n\n들어가기\n간단한 예제의 Shiny 애플리케이션 문제가 없지만, 제법 복잡한 기능을 구현하는 Shiny 애플리케이션은 개발과 유지보수가 쉽지 않습니다.\n\nBitStat를 협업으로 개발하려 하는 프로그램 코드와 프로젝트 구조의 복잡성으로 인해 어려움이 발생하였니다.\n\n그래서 Shiny 애플리케이션 개발 프레임워크인 Rhino 패키지로 재구성하여 합니다.\n\n\nBitStat 애플리케이션 구조\n설계\nBitStat 패키지 생성\nRhino 패키지로 BitStat 패키지를 생성합니다. 다음과 같은 스크립트를\n실행합니다.:\nrhino::init(\"BitStat\")\n그러면 다음과 같은 진행 메시지가 출력되면서 프로젝트가\n생성됩니다.\n\n> rhino::init(\"BitStat\")\n✔ Rproj file created.\n* Initializing project ...\n* Discovering package dependencies ... Done!\n* Copying packages into the cache ... [80/80] Done!\nThe following package(s) will be updated in the lockfile:\n\n# CRAN ===============================\n- R.cache        [* -> 0.15.0]\n- R.methodsS3    [* -> 1.8.1]\n- R.oo           [* -> 1.24.0]\n- R.utils        [* -> 2.11.0]\n- R6             [* -> 2.5.1]\n- Rcpp           [* -> 1.0.8.3]\n- askpass        [* -> 1.1]\n- backports      [* -> 1.4.1]\n- base64enc      [* -> 0.1-3]\n- box            [* -> 1.1.2]\n- brio           [* -> 1.1.3]\n- bslib          [* -> 0.3.1]\n- cachem         [* -> 1.0.6]\n- callr          [* -> 3.7.0]\n- cli            [* -> 3.3.0]\n- codetools      [* -> 0.2-18]\n- commonmark     [* -> 1.8.0]\n- config         [* -> 0.3.1]\n- crayon         [* -> 1.5.1]\n- curl           [* -> 4.3.2]\n- cyclocomp      [* -> 1.1.0]\n- desc           [* -> 1.4.1]\n- diffobj        [* -> 0.3.5]\n- digest         [* -> 0.6.29]\n- ellipsis       [* -> 0.3.2]\n- evaluate       [* -> 0.15]\n- fansi          [* -> 1.0.3]\n- fastmap        [* -> 1.1.0]\n- fontawesome    [* -> 0.2.2]\n- fs             [* -> 1.5.2]\n- glue           [* -> 1.6.2]\n- highr          [* -> 0.9]\n- htmltools      [* -> 0.5.2]\n- httpuv         [* -> 1.6.5]\n- httr           [* -> 1.4.2]\n- jquerylib      [* -> 0.1.4]\n- jsonlite       [* -> 1.8.0]\n- knitr          [* -> 1.37]\n- later          [* -> 1.3.0]\n- lazyeval       [* -> 0.2.2]\n- lifecycle      [* -> 1.0.1]\n- lintr          [* -> 2.0.1]\n- logger         [* -> 0.2.2]\n- magrittr       [* -> 2.0.3]\n- mime           [* -> 0.12]\n- openssl        [* -> 2.0.0]\n- pillar         [* -> 1.7.0]\n- pkgconfig      [* -> 2.0.3]\n- pkgload        [* -> 1.2.4]\n- praise         [* -> 1.0.0]\n- processx       [* -> 3.5.3]\n- promises       [* -> 1.2.0.1]\n- ps             [* -> 1.7.0]\n- purrr          [* -> 0.3.4]\n- rappdirs       [* -> 0.3.3]\n- rematch2       [* -> 2.1.2]\n- remotes        [* -> 2.4.2]\n- renv           [* -> 0.15.3]\n- rex            [* -> 1.2.1]\n- rhino          [* -> 1.0.0]\n- rlang          [* -> 1.0.2]\n- rprojroot      [* -> 2.0.3]\n- rstudioapi     [* -> 0.13]\n- sass           [* -> 0.4.1]\n- shiny          [* -> 1.7.1]\n- sourcetools    [* -> 0.1.7]\n- stringi        [* -> 1.7.6]\n- stringr        [* -> 1.4.0]\n- styler         [* -> 1.6.2]\n- sys            [* -> 3.4]\n- testthat       [* -> 3.1.4]\n- tibble         [* -> 3.1.7]\n- utf8           [* -> 1.2.2]\n- vctrs          [* -> 0.4.1]\n- waldo          [* -> 0.4.0]\n- withr          [* -> 2.5.0]\n- xfun           [* -> 0.30]\n- xml2           [* -> 1.3.3]\n- xmlparsedata   [* -> 1.0.5]\n- xtable         [* -> 1.8-4]\n- yaml           [* -> 2.3.5]\n\n* Lockfile written to '~/Documents/01_Personal/00_bitr/01_packages/BitStat_reorg/BitStat/renv.lock'.\nThe following folder(s) appear to be left-over temporary directories:\n\n    file705e27d41a09\n\nConsider removing these folders from your library.\n\n✔ Initialized renv.\n✔ Application structure created.\n✔ Unit tests structure created.\n✔ E2E tests structure created.\n✔ Github Actions CI added.\n\n프로젝트 구조\n생성된 프로젝트의 폴더 구조는 다음과 같습니다.\n생성된 프로젝트 폴더그리고 이 폴더의 구조를 트리 모양으로 살펴보면 다음과 같습니다.\n생성된 프로젝트 폴더\n\n\n",
+      "last_modified": "2022-06-12T23:46:39+09:00"
+    },
+    {
+      "path": "index.html",
+      "title": "BitStat 프로젝트 개요",
+      "description": "BitStat 프로젝트\n",
+      "author": [
+        {
+          "name": "유충현",
+          "url": "https://choonghyunryu.github.io"
+        }
+      ],
+      "date": "2022-06-11",
+      "contents": "\n\nContents\nBitStat 프로젝트 개요\n\nBitStat 프로젝트 개요\n\n\n\n",
+      "last_modified": "2022-06-12T23:49:24+09:00"
+    }
+  ],
+  "collections": []
+}

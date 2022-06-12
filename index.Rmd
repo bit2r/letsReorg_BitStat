@@ -1,0 +1,23 @@
+---
+title: "BitStat 프로젝트 개요"
+description: |
+  BitStat 프로젝트
+site: distill::distill_website
+output:
+  distill::distill_article:
+    toc: true
+    toc_depth: 3  
+author:
+  - name: 유충현
+    url: https://choonghyunryu.github.io
+    affiliation: 한국R사용자회
+    affiliation_url: https://r2bit.com/
+citation_url: https://r2bit.com/lets_dev_bitstat/
+date: 2022-06-11   
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## BitStat 프로젝트 개요
